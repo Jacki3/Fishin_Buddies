@@ -77,6 +77,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CharacterController.cs" />
+    <Compile Include="Assets\Scripts\LoadShop.cs" />
     <Compile Include="Assets\Scripts\Scroll.cs" />
   </ItemGroup>
   <ItemGroup>
