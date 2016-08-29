@@ -6,6 +6,8 @@ public class CharacterController : MonoBehaviour {
 	public float maxSpeed = 10f;
 	bool facingRight = false;
 
+    public GameObject m_background;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -15,16 +17,22 @@ public class CharacterController : MonoBehaviour {
 	void Update () {
 		float move = Input.GetAxis("Horizontal");
 
-		GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, 0);
+        m_background = GameObject.Find("Background");
+	    Scroll scroll = m_background.GetComponent<Scroll>();
+        scroll.Go();
 
-		if (move > 0 && !facingRight)
+
+        GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, 0);
+
+        if (move > 0 && !facingRight)
 		{
 			Flip();
 		}
 		else if(move < 0 && facingRight) {
 			Flip();
-		}
-	}
+        }
+
+    }
 
 	void Flip() {
 		facingRight = !facingRight;

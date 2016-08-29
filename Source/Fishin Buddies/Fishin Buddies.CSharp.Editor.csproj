@@ -106,6 +106,10 @@
       <Project>{68F0D79C-710F-57DC-6955-7A26C843F332}</Project>
       <Name>Fishin Buddies.CSharp.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="Fishin Buddies.CSharp.csproj">
+      <Project>{0A5749CE-7FBB-F863-87E5-9F3D7E5A12B7}</Project>
+      <Name>Fishin Buddies.CSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
