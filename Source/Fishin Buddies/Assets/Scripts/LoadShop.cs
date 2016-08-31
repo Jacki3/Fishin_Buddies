@@ -20,6 +20,11 @@ public class LoadShop : MonoBehaviour {
 			Application.LoadLevel("Dev_James");
 			return;
 		}
+		if (Application.loadedLevelName == "Dev_James")
+		{
+			Application.LoadLevel("Boat");
+			return;
+		}
 		Application.LoadLevel("Shop");
 	}
 }
