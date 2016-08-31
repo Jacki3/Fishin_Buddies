@@ -10,17 +10,11 @@ public class CharacterController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		float move = Input.GetAxis("Horizontal");
-
-        m_background = GameObject.Find("Background");
-	    Scroll scroll = m_background.GetComponent<Scroll>();
-        scroll.Go();
-
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, 0);
 
