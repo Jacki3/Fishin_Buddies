@@ -14,6 +14,6 @@ public class LoadShop : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		Debug.Log("Load the shop scene here...");
-		// Application.LoadLevel ("tgest");
+		Application.LoadLevel("Shop");
 	}
 }
