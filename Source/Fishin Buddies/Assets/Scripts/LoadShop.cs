@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class LoadShop : MonoBehaviour {
 
@@ -12,19 +13,23 @@ public class LoadShop : MonoBehaviour {
 	void Update () {
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
+    void OnCollisionEnter2D(Collision2D coll) {
 		Debug.Log("Load the shop scene here...");
-		Debug.Log(Application.loadedLevelName);
-		if (Application.loadedLevelName == "Shop")
+		Debug.Log(SceneManager.GetActiveScene().name);
+		Debug.Log(coll.contacts[1].otherCollider.name);
+		if (SceneManager.GetActiveScene().name == "Shop")
 		{
-			Application.LoadLevel("Dev_James");
+			SceneManager.LoadScene("Dev_James");
 			return;
 		}
-		if (Application.loadedLevelName == "Dev_James")
+		if (coll.contacts[1].otherCollider.name == "boat1")
 		{
-			Application.LoadLevel("Boat");
+			SceneManager.LoadScene("Boat");
 			return;
 		}
-		Application.LoadLevel("Shop");
+		if (coll.contacts[1].otherCollider.name == "Bus")
+		{
+			SceneManager.LoadScene("Shop");
+		}
 	}
 }
