@@ -31,5 +31,9 @@ public class LoadShop : MonoBehaviour {
 		{
 			SceneManager.LoadScene("Shop");
 		}
+		if (SceneManager.GetActiveScene().name == "Boat")
+		{
+			SceneManager.LoadScene("Dev_James");
+		}
 	}
 }
